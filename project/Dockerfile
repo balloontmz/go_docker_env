@@ -6,17 +6,7 @@ RUN apk upgrade && apk add --no-cache ca-certificates
 
 RUN mkdir /loupdag
 
-WORKDIR /
-
-COPY worldmap-api /
-
-COPY config.ini /
-
-COPY updates /
-
-COPY LocList.xml.en /
-
-COPY LocList.xml.zh-cn /
+WORKDIR /var/html
 
 # 采用环境中的 配置端口导出
 EXPOSE ${CONFIG_PORT}
